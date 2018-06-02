@@ -1,42 +1,74 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import Entries from './src/components/Entries'
+import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native';
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      jounalEntries: []
-      feelingField: ''
+      jounalEntries: [],
+      newEntry: '',
+      entryCount: 0
     }
   }
 
   feelingHandler = (event) => {
     this.setState({
-      feelingField: event
+      newEntry: event
     })
   }
 
   handleSubmit = (event) => {
+    const nextEntry = {
+      content: this.state.newEntry,
+      key: this.state.entryCount + ''
+    }
+    this.setState(prevstate => {
+      return {
+        jounalEntries: [...prevstate.jounalEntries, nextEntry]
+      }
+    })
+    this.setState(prevstate => {
+      return {
+        newEntry: '',
+        entryCount: this.state.entryCount++
+      }
+    })
+  }
 
+  handleDelete = (itemId) => {
+    this.setState(prevstate => {
+      return {
+        jounalEntries: prevstate.jounalEntries.filter(entry => {
+          return entry.key !== itemId
+        })
+      }
+    })
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.feelingView}>
-          <TextInput
-          style={styles.feelingInput}
-          onChangeText={this.feelingHandler}
-          value={this.state.feelingField}
-          placeholder='How are you feeling today?'
-          />
-          <Button
-          style={styles.feelingButton}
-          title='add'
-          onPress={this.handleSubmit}
-          />
+      <ScrollView keyboardShouldPersistTaps='always'>
+        <View style={styles.container}>
+          <Text style={styles.title}>Daily Diary</Text>
+          {
+            (this.state.jounalEntries.length) ? <View><Text>Entries</Text><Entries handleDelete={this.handleDelete} jounalEntries={this.state.jounalEntries}/></View> : <Text style={styles.noText}>No entries to view</Text>
+          }          
+          <View style={styles.feelingView}>
+            <TextInput
+            style={styles.feelingInput}
+            onChangeText={this.feelingHandler}
+            value={this.state.newEntry}
+            placeholder='What did you do today?'
+            />
+            <Button
+            style={styles.feelingButton}
+            title='Submit'
+            onPress={this.handleSubmit}
+            />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -49,16 +81,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  title: {
+    fontSize: 25,
+  },
   feelingView: {
     width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   feelingInput: {
-    width: '80%'
+    width: '100%',
+    padding: 30,
+    textAlign: 'center'
   },
   feelingButton: {
-    width: '20%'
+
+  },
+  noText: {
+    padding: 10
   }
 });
