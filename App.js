@@ -31,7 +31,7 @@ export default class App extends React.Component {
     this.setState(prevstate => {
       return {
         newEntry: '',
-        entryCount: this.state.entryCount++
+        entryCount: prevstate.entryCount + 1
       }
     })
   }
@@ -49,12 +49,12 @@ export default class App extends React.Component {
   render() {
     return (
       <ScrollView keyboardShouldPersistTaps='always'>
-        <View style={styles.container}>
+        <ScrollView keyboardShouldPersistTaps='always' style={styles.container}>
           <Text style={styles.title}>Daily Diary</Text>
-          {
-            (this.state.jounalEntries.length) ? <View><Text>Entries</Text><Entries handleDelete={this.handleDelete} jounalEntries={this.state.jounalEntries}/></View> : <Text style={styles.noText}>No entries to view</Text>
-          }          
-          <View style={styles.feelingView}>
+            <ScrollView keyboardShouldPersistTaps='always'>
+              <Entries style={styles.entryList} handleDelete={this.handleDelete} jounalEntries={this.state.jounalEntries}/>
+            </ScrollView>
+          <ScrollView keyboardShouldPersistTaps='always' style={styles.feelingView}>
             <TextInput
             style={styles.feelingInput}
             onChangeText={this.feelingHandler}
@@ -62,12 +62,13 @@ export default class App extends React.Component {
             placeholder='What did you do today?'
             />
             <Button
+
             style={styles.feelingButton}
             title='Submit'
             onPress={this.handleSubmit}
             />
-          </View>
-        </View>
+          </ScrollView>
+        </ScrollView>
       </ScrollView>
     );
   }
@@ -78,16 +79,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
   },
   title: {
     fontSize: 25,
+    justifyContent: 'center'
   },
   feelingView: {
     width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   feelingInput: {
     width: '100%',
@@ -97,7 +95,13 @@ const styles = StyleSheet.create({
   feelingButton: {
 
   },
-  noText: {
+  entryTitle: {
+    textAlign: 'center',
     padding: 10
+  },
+  entryList: {
+    alignItems: 'center',
+    textAlign: 'center',
+
   }
 });
