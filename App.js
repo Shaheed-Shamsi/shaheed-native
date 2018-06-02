@@ -82,7 +82,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    textAlign: 'center'
   },
   feelingView: {
     width: '100%',
@@ -94,10 +95,6 @@ const styles = StyleSheet.create({
   },
   feelingButton: {
 
-  },
-  entryTitle: {
-    textAlign: 'center',
-    padding: 10
   },
   entryList: {
     alignItems: 'center',

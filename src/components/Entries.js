@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'black',
     padding: 15,
-
     width: 300,
   },
   eachText: {
@@ -39,9 +38,13 @@ const styles = StyleSheet.create({
   },
   touchable: {
     padding: 10,
-
   },
   noText: {
+    padding: 10,
+    textAlign: 'center'
+  },
+  entryTitle: {
+    textAlign: 'center',
     padding: 10
   },
   entryFlatlist: {
