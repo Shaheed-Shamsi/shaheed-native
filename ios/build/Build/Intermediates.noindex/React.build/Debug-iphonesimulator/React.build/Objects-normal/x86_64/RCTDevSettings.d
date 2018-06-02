@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/shaheed/shaheed-native/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/shaheed/shaheed-native/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/shaheed/shaheed-native/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h
