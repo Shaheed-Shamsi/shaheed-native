@@ -50,7 +50,7 @@ export default class App extends React.Component {
     return (
       <ScrollView keyboardShouldPersistTaps='always'>
         <ScrollView keyboardShouldPersistTaps='always' style={styles.container}>
-          <Text style={styles.title}>Daily Diary</Text>
+          <Text style={styles.title}>Daily Journal</Text>
             <ScrollView keyboardShouldPersistTaps='always'>
               <Entries style={styles.entryList} handleDelete={this.handleDelete} jounalEntries={this.state.jounalEntries}/>
             </ScrollView>
